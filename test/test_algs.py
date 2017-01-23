@@ -20,11 +20,19 @@ def test_bubblesort():
     # think about: (1) does your code handle 0-element arrays without
     # failing, (2) does your code handle characters?
 
-    x = np.array([1,2,4,0,1])
-    
-    # for now, just attempt to call the bubblesort function, should
-    # actually check output
+    # Test random vector
+    x = np.random.rand(10)
     algs.bubblesort(x)
+
+    # Test empty vector
+    x = np.array([])
+    algs.bubblesort(x)
+    
+    # Single element vector
+    x = np.array([])
+    algs.bubblesort(x)
+    
+    #
 
 def test_quicksort():
 

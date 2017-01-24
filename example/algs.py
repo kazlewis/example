@@ -46,6 +46,7 @@ def partition(x, lo, hi):
     right = hi
     done = False
     
+    # Couldn't get the structure of this while loop in the lecture to work, so I found an alternative method online
     while not done:
         while left <= right and x[left] <= pivot_item:
             left += 1
@@ -54,9 +55,11 @@ def partition(x, lo, hi):
         if right < left:
             done = True
         else:
+            # Swap
             temp = x[left]
             x[left] = x[right]
             x[right] = temp
+    # Swap again
     temp = x[lo]
     x[lo] = x[right]
     x[right] = temp

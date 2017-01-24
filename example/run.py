@@ -11,15 +11,6 @@ def run_stuff():
     print("This is `run()` from ", __file__)
 
     x = np.random.rand(10)
-    
-    # Ignore trivial, empty arrays, and non-numeric arrays
-    if not x.size:
-        return x
-    if x.size == 1:
-        return x
-    if not all(isinstance(item, np.float64) for item in x):
-        return 'input is not a numeric array'
-    
     print("Unsorted input: ", x)
 
     print("Bubble sort output: ", bubblesort(x))

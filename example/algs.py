@@ -9,8 +9,15 @@ def pointless_sort(x):
     return np.array([1,2,3])
 
 def bubblesort(x):
-    # Checks for any empty or single length vectors as well as invalid ones (non-numpy integers) occur in run.py 
-    # to minimize the runtime of the algorithms.
+    
+    # Ignore trivial, empty arrays, and non-numeric arrays
+    if not x.size:
+        return x
+    if x.size == 1:
+        return x
+    if not all(isinstance(item, np.float64) for item in x):
+        return 'input is not a numeric array'
+    
     """
     Loop through the array  continually, starting at n+1 an onward and check pairwise to see if the next 
     integer is larger  (ignoring equality to reduce number of total assignments), and if it is larger, 
@@ -65,7 +72,15 @@ def quicksortmain(x, lo, hi):
 def quicksort(x):
     # Checks for any empty or single length vectors as well as invalid ones (non-numpy integers) occur in run.py 
     # to minimize the runtime of the algorithms. This is more of a wrapper function for partition().
-
+    
+    # Ignore trivial, empty arrays, and non-numeric arrays
+    if not x.size:
+        return x
+    if x.size == 1:
+        return x
+    if not all(isinstance(item, np.float64) for item in x):
+        return 'input is not a numeric array'
+        
     start = time.time()
     quicksortmain(x, 0, len(x) - 1)
     end = time.time()

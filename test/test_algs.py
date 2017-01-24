@@ -25,22 +25,22 @@ def test_bubblesort():
     algs.bubblesort(x)
     
     # Single element vector
-    x = np.array([])
+    x = np.array([1.0])
     algs.bubblesort(x)
 
 def test_quicksort():
 
     x = np.array([1,2,4,0,1])
-    algs.quicksort(x, 0, x.size - 1)
+    algs.quicksort(x)
     
     # Test random vector
     x = np.random.rand(100)
-    algs.quicksort(x, 0, x.size - 1)
+    algs.quicksort(x)
 
     # Test empty vector
     x = np.array([])
-    algs.quicksort(x, 0, x.size - 1)
+    algs.quicksort(x)
     
     # Single element vector
-    x = np.array([])
-    algs.quicksort(x, 0, x.size - 1)
+    x = np.array([1.0])
+    algs.quicksort(x)
